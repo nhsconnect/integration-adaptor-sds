@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  route:
+    build:
+      context: ./integration-tests/fake_spineroutelookup
+      dockerfile: Dockerfile
+
+  fakespine:
+    build:
+      context: ./
+      dockerfile: ./integration-tests/fake_spine/Dockerfile
+    ports:
+      - "6061:443"
+      - "6062:80"
+    environment: 
+      - FAKE_SPINE_CERTIFICATE
+      - FAKE_SPINE_PRIVATE_KEY
+      - FAKE_SPINE_CA_STORE
+      - INBOUND_SERVER_BASE_URL=https://inbound
+      - MHS_LOG_LEVEL=INFO
+
+  inbound:
+    environment:
+      - MHS_SECRET_CLIENT_CERT=${INBOUND_CERTIFICATE}
+      - MHS_SECRET_CLIENT_KEY=${INBOUND_PRIVATE_KEY}
+      - MHS_SECRET_CA_CERTS=${INBOUND_CA_STORE}
+      - MHS_SECRET_PARTY_KEY=test-party-key
+
+  outbound:
+    environment:
+      - MHS_SECRET_CLIENT_CERT=${OUTBOUND_CERTIFICATE}
+      - MHS_SECRET_CLIENT_KEY=${OUTBOUND_PRIVATE_KEY}
+      - MHS_SECRET_CA_CERTS=${OUTBOUND_CA_STORE}
+      - MHS_FORWARD_RELIABLE_ENDPOINT_URL=https://fakespine
+      - MHS_OUTBOUND_VALIDATE_CERTIFICATE=${MHS_OUTBOUND_VALIDATE_CERTIFICATE}
