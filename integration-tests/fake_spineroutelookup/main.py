@@ -63,7 +63,7 @@ def build_reliability_configuration() -> SpineRouteLookupRequestResponseMapper:
 if __name__ == "__main__":
     parse_command_line()
 
-    logger.log(logging.INFO, "Building fake spineroutelookup service configuration")
+    logger.log(logging.INFO, "Building fake spine-route-lookup service configuration")
 
     routing_configuration = build_routing_configuration()
     reliability_configuration = build_reliability_configuration()
@@ -73,5 +73,5 @@ if __name__ == "__main__":
     logger.info('Fake spine route lookup starting on port %s', spine_route_lookup_port)
     server.listen(int(spine_route_lookup_port))
 
-    logger.log(logging.INFO, "Starting fake spineroutelookup service")
+    logger.log(logging.INFO, "Starting fake spine-route-lookup service")
     tornado.ioloop.IOLoop.current().start()

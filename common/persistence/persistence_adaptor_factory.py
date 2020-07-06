@@ -18,8 +18,8 @@ PERSISTENCE_ADAPTOR_TYPES = {
 def get_persistence_adaptor(*args, **kwargs) -> PersistenceAdaptor:
     """
     Builds a new persistence adaptor of type defined in environment variable PERSISTENCE_ADAPTOR
-    Must be one of the defined in mhs.common.state.persistence_adaptor_factory._PERSISTENCE_ADAPTOR_TYPES
-    :class:`PersistenceAdaptor <mhs.common.state.persistence_adaptor.PersistenceAdaptor>`.
+    Must be one of the defined in sds.common.state.persistence_adaptor_factory._PERSISTENCE_ADAPTOR_TYPES
+    :class:`PersistenceAdaptor <sds.common.state.persistence_adaptor.PersistenceAdaptor>`.
     :param args: passed downstream to persistence adaptor constructor
     :param kwargs: passed downstream to persistence adaptor constructor
     :return: new instance of persistence adaptor

@@ -22,7 +22,7 @@ class DynamoPersistenceAdaptor(persistence_adaptor.PersistenceAdaptor):
     def __init__(self, table_name: str, max_retries: int, retry_delay: float):
         """
         Constructs a DynamoDB version of a
-        :class:`PersistenceAdaptor <mhs.common.state.persistence_adaptor.PersistenceAdaptor>`.
+        :class:`PersistenceAdaptor <sds.common.state.persistence_adaptor.PersistenceAdaptor>`.
         The kwargs provided should contain the following information:
           * table_name: The Table Name used to identify the dynamo table containing required items.
           * max_retries: The number of max retries object should make if there is an error connecting with the DB
