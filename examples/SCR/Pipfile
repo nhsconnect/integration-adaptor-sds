@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 scr = {editable = true,path = "."}
-integration-adaptors-common = {editable = true, path = "../../common"}
+sds-common = {editable = true, path = "../../sds/common"}
 
 [requires]
 python_version = "3.7"
