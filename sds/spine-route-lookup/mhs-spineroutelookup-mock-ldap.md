@@ -1,4 +1,4 @@
-## MHS Spine Route Lookup component - Mock LDAP
+## SDS - Spine Route Lookup component - Mock LDAP
 
 Spine Route Lookup component has a built in LDAP mocking capability
 To be able to use it, three json configuration files has to be present:

@@ -1,6 +1,6 @@
 
 
-## MHS Spine Route Lookup component - Developer Notes
+## SDS - Spine Route Lookup component - Developer Notes
 
 The following sections are intended to provide the necessary info on how to set up workstation to start development. As of now it was tested/used on Mac (OS X).
 
