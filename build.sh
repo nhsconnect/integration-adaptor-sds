@@ -1,4 +1,2 @@
 set -e
-packer build -except publish pipeline/packer/inbound.json
-packer build -except publish pipeline/packer/outbound.json
-packer build -except publish pipeline/packer/spineroutelookup.json
+docker build -t local/sds:${BUILD_TAG} -f sds/spine-route-lookup/Dockerfile .
