@@ -1,17 +1,21 @@
-FROM nhsdev/nia-sds-base:latest
+FROM python:3.7-slim as base
 
-RUN mkdir -p /usr/src/app/mhs/spineroutelookup
+RUN apt-get update && \
+    apt-get install build-essential -y
 
-COPY mhs/spineroutelookup/Pipfile /usr/src/app
-COPY mhs/spineroutelookup/Pipfile.lock /usr/src/app
+RUN sed -i 's/SECLEVEL=2/SECLEVEL=1/' /etc/ssl/openssl.cnf # Temporarily lower security to workaround opentest certs with SHA1 signatures
+
+RUN mkdir -p /usr/src/app/sds/spine-route-lookup
+
+COPY sds/spine-route-lookup/Pipfile /usr/src/app
+COPY sds/spine-route-lookup/Pipfile.lock /usr/src/app
 
 RUN pip install pipenv
 
-COPY common/ /usr/src/app/common/
-COPY mhs/common/ /usr/src/app/mhs/common/
-COPY mhs/spineroutelookup/ /usr/src/app/mhs/spineroutelookup
+COPY sds/common/ /usr/src/app/sds/common/
+COPY sds/spine-route-lookup/ /usr/src/app/sds/spine-route-lookup
 
-WORKDIR /usr/src/app/mhs/spineroutelookup
+WORKDIR /usr/src/app/sds/spine-route-lookup
 
 RUN pipenv install --deploy --ignore-pipfile
 
