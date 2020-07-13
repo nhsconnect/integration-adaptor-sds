@@ -2,4 +2,4 @@ version: '3'
 
 services:
   route:
-    image: nhsdev/nia-mhs-route:${BUILD_TAG}
+    image: nhsdev/nia-spine-directory-service:${BUILD_TAG}

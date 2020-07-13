@@ -75,7 +75,7 @@ export MHS_SECRET_CLIENT_KEY=""
 # Endpoint issuing subCA certificate and Root CA certificate here
 export MHS_SECRET_CA_CERTS=""
 
-./start-mhs-docker-containers.sh
+./start-sds-docker-containers.sh
   ```
 3. Populate the environment variables with the certificate details received from NHS OpenTest
 4. Execute the script `export-env-vars-and-run-mhs-docker.sh`

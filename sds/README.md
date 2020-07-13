@@ -1,4 +1,4 @@
-# MHS Adaptor
+# SDS API
 
 This package contains a pre-assured implementation of a Message Handling Service (MHS), intended to encapsulate the
 details of Spine messaging and provide a simple interface to allow HL7 messages to be sent to a remote MHS.
@@ -50,52 +50,19 @@ The National Adaptors Common Module provides classes which implement common requ
 
 ## API Documentation
 
-The MHS Adaptor presents a simple HTTP synchronous interface which is used to make requests to Spine.
-
-Please refer to the [API Documentation](MHS-Outbound.yaml) for further details.
+Please refer to the [API Documentation](sds-api.yaml) for further details.
 
 Examples of how this API is called can be found in the [integration tests](../integration-tests/integration_tests) module
 
-## RestClient collection- example requests to the MHS Adaptor
+## RestClient collection- example requests to the SDS API
 
-A RestClient collection [rest-client/mhs](../rest-client/mhs) illustrates how the MHS Adaptor API
+A RestClient collection [rest-client/sds](../rest-client/sds) illustrates how the MHS Adaptor API
 is called. This collection provides following API request examples:
- - asynchronous request to outbound, with no retries while sending requests from outbound to spine
- - asynchronous request to outbound, with retries while sending request from outbound to to spine
- - synchronous request to outbound, with retries while sending request to nhs application other than spine
- - synchronous request to outbound
- - solicited request to inbound
- - unsolicited request to inbound.
- 
-There are also health, reliability and routing checks.
+-health check
+-routing information from the spine
+-reliability information from the spine
  
 Before sending these requests, you will need to create a setting.json file as described in [README](../rest-client/README.md).
- 
-Before sending requests directly to the inbound service, you will need to switch off ssl by setting 'MHS_INBOUND_USE_SSL: false' in .yaml inbound configuration file.
-It is necessary to send requests to inbound without ssl.  
-
-#### "Async Express Pattern Message  - Synchronous Response" 
-
-The Asynchronous Express Messaging Pattern is one of the Spine messaging patterns which is defined in the Spine External Interface Specification. 
-In this pattern, a request is made to Spine, but the response is not provided on the same connection. Instead, spine initiates a connection back to your 
-MHS with the response. I.e the response from Spine is delivered like a call back to your MHS. The MHS Adaptor has hidden all this asynchronous callback 
-detail behind a synchronous interface, so your HTTP client just sees a simple HTTP request/response. This is what the MHS Adaptor has termed the "Sync-Async wrapper". 
-When you set the `wait-for-response` message header to `true` you are requesting the MHS Adaptor to hide this asynchronous response from you, and deliver the response in the 
-same HTTP connection.
-
-In this example, the `QUPC_IN160101UK05` Spine message is used. This Spine message is used when requesting the Summary Care Record of a patient.
- 
-#### "Async Express Pattern Message  - Asynchronous Response" 
-
-The Asynchronous Express Messaging Pattern is one of the Spine messaging patterns which is defined in the Spine External Interface Specification. 
-In this pattern, a request is made to Spine, but the response is not provided on the same connection. Instead, spine initiates a connection back 
-to your MHS with the response. I.e the response from Spine is delivered like a call back to your MHS.
-
-The MHS Adaptor has hidden all this asynchronous callback detail behind a synchronous interface, so your HTTP client just sees a simple HTTP 
-request/response. This is what the MHS Adpator has termed the Sync-Async wrapper. When you set the wait-for-response  message header you are requesting 
-the MHS Adaptor to hide this asynchronous response from you, and deliver the response in the same hTTP connection.
-
-In this example, the `QUPC_IN160101UK05` Spine message is used again. 
 
 ## AWS Exemplar
 
