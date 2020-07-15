@@ -2,7 +2,7 @@ version: '3'
 
 services:
   route:
-    image: local/sds:${BUILD_TAG}
+    image: local/spine-directory-service:${BUILD_TAG}
     ports:
         - "8080:80"
     environment:

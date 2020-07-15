@@ -8,9 +8,6 @@
     "description" : "Spine Directory Service API",
     "version" : "1.0.0",
     "title" : "Spine Directory Service API",
-    "contact" : {
-      "email" : "tharack.ahmed1@nhs.net"
-    },
     "license" : {
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
@@ -19,9 +16,9 @@
   "paths" : {
     "/routing" : {
       "get" : {
-        "summary" : "obtain SDS routing information",
+        "summary" : "Obtain SDS routing information",
         "operationId" : "getRoutingInformation",
-        "description" : "Requests to obtain sds routing information\n",
+        "description" : "Request to obtain sds routing information\n",
         "parameters" : [ {
           "in" : "query",
           "name" : "org-code",
@@ -58,7 +55,7 @@
     },
     "/reliability" : {
       "get" : {
-        "summary" : "request to obtain reliability information",
+        "summary" : "Request to obtain reliability information",
         "operationId" : "getReliabilityInformation",
         "description" : "A handler for requests to obtain reliability information.\n",
         "parameters" : [ {
@@ -97,7 +94,7 @@
     },
     "/routing-reliability" : {
       "get" : {
-        "summary" : "requests to obtain combined routing and reliability information",
+        "summary" : "Request to obtain combined routing and reliability information",
         "operationId" : "getRoutingAndReliabilityInformation",
         "description" : "A handler for requests to obtain combined routing and reliability information.\n",
         "parameters" : [ {
@@ -140,9 +137,9 @@
     },
     "/healthcheck" : {
       "get" : {
-        "summary" : "Healthcheck endpoint",
+        "summary" : "Health check endpoint",
         "description" : "This endpoint just returns a HTTP 200 response and does no further processing. This endpoint is intended to be used by load balancers/other infrastructure to check that the server is running.",
-        "operationId" : "getHealthcheck",
+        "operationId" : "getHealthCheck",
         "responses" : {
           "200" : {
             "description" : "The only response this endpoint returns."

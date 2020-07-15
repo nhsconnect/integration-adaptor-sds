@@ -50,13 +50,13 @@ The National Adaptors Common Module provides classes which implement common requ
 
 ## API Documentation
 
-Please refer to the [API Documentation](sds-api.yaml) for further details.
+Please refer to the [API Documentation](spine-directory-service-api.yaml) for further details.
 
 Examples of how this API is called can be found in the [integration tests](../integration-tests/integration_tests) module
 
 ## RestClient collection- example requests to the SDS API
 
-A RestClient collection [rest-client/sds](../rest-client/sds) illustrates how the MHS Adaptor API
+A RestClient collection [rest-client/sds](../rest-client/spine-directory-service) illustrates how the MHS Adaptor API
 is called. This collection provides following API request examples:
 -health check
 -routing information from the spine

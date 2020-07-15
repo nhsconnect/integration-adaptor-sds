@@ -80,7 +80,7 @@ def start_tornado_server(routing: routing_reliability.RoutingAndReliability) -> 
 def main():
     config.setup_config("MHS")
     secrets.setup_secret_config("MHS")
-    log.configure_logging('spine-route-lookup')
+    log.configure_logging('spine-directory-service')
 
     routing = initialise_routing(search_base=config.get_config("SDS_SEARCH_BASE"))
     start_tornado_server(routing)

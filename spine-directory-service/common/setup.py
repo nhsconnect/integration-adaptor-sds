@@ -3,7 +3,7 @@ from distutils.core import setup
 import setuptools
 
 setup(
-    name='sds-common',
+    name='spine-directory-service-common',
     version='',
     packages=setuptools.find_packages(),
     url='',

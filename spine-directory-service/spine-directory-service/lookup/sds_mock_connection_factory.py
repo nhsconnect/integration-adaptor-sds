@@ -106,7 +106,7 @@ def build_mock_sds_connection():
 
 def main(args):
     config.setup_config('MHS')
-    log.configure_logging('spine-route-lookup')
+    log.configure_logging('spine-directory-service')
     _read_real_server_data(args.path, args.nhs_id_code)
 
 
