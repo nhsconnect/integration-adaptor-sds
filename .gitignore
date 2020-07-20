@@ -125,7 +125,7 @@ venv.bak/
 **/certs/asid.txt
 
 
-mhs-reference-implementation/selenium_tests/data/local_asid
+spine-directory-service-implementation/selenium_tests/data/local_asid
 
 **/test-reports/
 
@@ -138,9 +138,7 @@ mhs-reference-implementation/selenium_tests/data/local_asid
 **/component-test-source.sh
 
 # Local configuration
-/mhs/inbound/nhs-inbound-env.yaml
-/mhs/outbound/nhs-outbound-env.yaml
-/mhs/spineroutelookup/nhs-spineroutelookup-env.yaml
+/spine-directory-service/spine-directory-service/nhs-spineroutelookup-env.yaml
 export-env-vars-and-run-mhs-docker.sh
 /integration-tests/integration_tests/integration-test-env.yaml
 
@@ -148,7 +146,7 @@ export-env-vars-and-run-mhs-docker.sh
 .DS_Store
 
 # mock ldap data
-/mhs/spineroutelookup/mock_ldap_data/*.json
+/spine-directory-service/spine-directory-service/mock_ldap_data/*.json
 
 **/export-env-vars.sh
 out/

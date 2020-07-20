@@ -1,3 +1,0 @@
-# @name fake-spine-healthcheck
-
-GET {{BASE_URL}}:{{FAKE-SPINE-PORT}}/healthcheck HTTP/1.1

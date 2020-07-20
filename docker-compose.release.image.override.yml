@@ -1,11 +1,5 @@
 version: '3'
 
 services:
-  inbound:
-    image: nhsdev/nia-mhs-inbound:${BUILD_TAG}
-
-  outbound:
-    image: nhsdev/nia-mhs-outbound:${BUILD_TAG}
-
   route:
-    image: nhsdev/nia-mhs-route:${BUILD_TAG}
+    image: nhsdev/nia-spine-directory-service:${BUILD_TAG}
